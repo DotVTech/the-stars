@@ -1,0 +1,350 @@
+<!-- NOTICE 1:
+The children of "header__locals" and "header__socials" do not follow the BEM naming
+convention due to the complexity involved with doing so -->
+
+<!-- NOTICE 2: The reservation form is missing best practices of forms.
+For example, it does not have labels. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Stars | Restaurant</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="dist/images/logo.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="dist/css/reset.min.css">
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header__container">
+            <div class="header__main">
+                <a class="header__logo" href="#">
+                    <img class="header__logo-image" src="dist/images/logo.png" alt="">
+                </a>
+                <div class="header__hamburger-button" id="hamburger-button">
+                    <span class="header__line"></span>
+                    <span class="header__line"></span>
+                    <span class="header__line"></span>
+                </div>
+            </div>
+            <nav class="header__links">
+                <ul class="header__locals" id="header-locals">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#dining">Dining</a></li>
+                    <li><a href="#reservation-banner">Reservations</a></li>
+                    <li><a href="#menu-banner">Menu</a></li>
+                </ul>
+                <ul class="header__socials">
+                    <!-- The "onclick" prevents the page from jumping to the top when the element is clicked. The jumping occurs because there is no link in the "href" -->
+                    <li>
+                        <a href="#" onclick="return false;">
+                            <img src="dist/images/icons/instagram.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="return false;">
+                            <img src="dist/images/icons/twitter.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="return false;">
+                            <img src="dist/images/icons/youtube.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Hero -->
+    <section class="section hero" id="hero">
+        <div class="container">
+            <h2 class="heading-secondary heading-secondary--default">Welcome</h2>
+            <h1 class="heading-primary heading-primary--default">The Stars</h1>
+            <div class="separator separator--hero">
+                <span class="separator__line separator__line-left"></span>
+                <i class="separator__asterisk separator__asterisk--spin fas fa-asterisk"></i>
+                <span class="separator__line separator__line-right"></span>
+            </div>
+            <h5 class="hero__heading-5">Food at first sight</h5>
+            <a class="button button--hero" href="#reservation-banner">Book a table</a>
+        </div>
+    </section>
+
+
+    <!-- Dining -->
+    <section class="section dining" id="dining">
+        <div class="container">
+            <div class="dining__location dining__location--first">
+                <h2 class="heading-secondary heading-secondary--dining dining__heading-secondary">The private</h2>
+                <h1 class="heading-primary heading-primary--dining dining__heading-primary">Rooftop</h1>
+                <i class="separator__asterisk dining__asterisk fas fa-asterisk"></i>
+                <img class="dining__image" src="dist/images/locations/rooftop.jpg" alt="">
+                <p class="paragraph dining__paragraph">Star's 70 seat room, "The Rooftop" features a 4-tier chocolate fondue, an amazing view, and a romantic atmosphere.</p>
+            </div>
+            <div class="separator separator--dining dining__separator">
+                <span class="separator__line separator__line-left"></span>
+                <i class="separator__asterisk fas fa-asterisk"></i>
+                <span class="separator__line separator__line-right"></span>
+            </div>
+            <div class="dining__location dining__location--second">
+                <h2 class="heading-secondary heading-secondary--dining dining__heading-secondary">The dining</h2>
+                <h1 class="heading-primary heading-primary--dining dining__heading-primary">Ballroom</h1>
+                <i class="separator__asterisk dining__asterisk fas fa-asterisk"></i>
+                <img class="dining__image" src="dist/images/locations/ballroom.jpg" alt="">
+                <p class="paragraph dining__paragraph">Located in the central dining area, "The Ballroom", is the place where guests can enjoy live music performances and dance under the Ivano Royal Chandelier.</p>
+            </div>
+            <div class="separator separator--dining dining__separator">
+                <span class="separator__line separator__line-left"></span>
+                <i class="separator__asterisk fas fa-asterisk"></i>
+                <span class="separator__line separator__line-right"></span>
+            </div>
+            <div class="dining__location dining__location--third">
+                <h2 class="heading-secondary heading-secondary--dining dining__heading-secondary">The soaring</h2>
+                <h1 class="heading-primary heading-primary--dining dining__heading-primary">Skyline</h1>
+                <i class="separator__asterisk dining__asterisk fas fa-asterisk"></i>
+                <img class="dining__image" src="dist/images/locations/skyline.jpg" alt="">
+                <p class="paragraph dining__paragraph">Overlooking Fresco's Pier and Indie's Peak, "The Skyline", provides a unique view and a thrilling atmosphere.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Reservation Banner -->
+    <section class="banner" id="reservation-banner">
+        <div class="container">
+            <h2 class="heading-secondary heading-secondary--default">Make a</h2>
+            <h1 class="heading-primary heading-primary--default">Reservation</h1>
+        </div>
+    </section>
+
+
+    <!-- Reservation -->
+    <section class="section reservation">
+        <div class="container">
+            <h4 class="reservation__heading-4">Make a reservation</h4>
+            <form class="reservation__form" action="">
+                <input class="reservation__input" id="date-picker" type="date" value="" placeholder="MM/DD/YYY">
+                <select class="reservation__select">
+                    <option class="reservation__option">12:00 am</option>
+                    <option class="reservation__option">1:00 pm</option>
+                    <option class="reservation__option">2:00 pm</option>
+                    <option class="reservation__option">3:00 pm</option>
+                    <option class="reservation__option">4:00 pm</option>
+                    <option class="reservation__option">5:00 pm</option>
+                    <option class="reservation__option">6:00 pm</option>
+                    <option class="reservation__option" selected>7:00 pm</option>
+                    <option class="reservation__option">8:00 pm</option>
+                    <option class="reservation__option">9:00 pm</option>
+                    <option class="reservation__option">10:00 pm</option>
+                    <option class="reservation__option">11:00 pm</option>
+                    <option class="reservation__option">12:00 pm</option>
+                </select>
+                <select class="reservation__select">
+                    <option class="reservation__option">1 Person</option>
+                    <option class="reservation__option" selected>2 People</option>
+                    <option class="reservation__option">3 People</option>
+                    <option class="reservation__option">4 People</option>
+                    <option class="reservation__option">5 People</option>
+                    <option class="reservation__option">6 People</option>
+                    <option class="reservation__option">7 People</option>
+                    <option class="reservation__option">8 People</option>
+                    <option class="reservation__option">9 People</option>
+                    <option class="reservation__option">10 People</option>
+                </select>
+                <button class="button button--reservation reservation__button">Book a table</button>
+            </form>
+            <hr class="reservation__hr">
+            <div class="reservation__info">
+                <div class="reservation__text-group">
+                    <h3 class="reservation__heading-3">Reserve by phone</h3>
+                    <p class="paragraph">Reservations are an arrangement guests make in advance, confirming a table for them at the specified time. Reservations are made by phone, through our restaurant’s website, third-party reservation sites or apps, at the restaurant in person, or even with a text message. Convenience is key when it comes to diners getting a seat at our venue.</p>
+                </div>
+                <div class="reservation__text-group">
+                    <h3 class="reservation__heading-3">Private dining & events</h3>
+                    <p class="paragraph">Whether you’re planning a business meeting or cocktail reception, we are your home for private dining events. We offer two private dining rooms with customized menu options and complimentary wireless internet. A food & beverage minimum and completed contract is required to book our private event rooms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Menu Banner -->
+    <section class="banner" id="menu-banner">
+        <div class="container">
+            <h2 class="heading-secondary heading-secondary--default">Discover</h2>
+            <h1 class="heading-primary heading-primary--default">The Menu</h1>
+        </div>
+    </section>
+
+
+    <!-- Menu -->
+    <section class="section menu">
+        <div class="container">
+            <div class="menu__category">
+                <div class="menu__images menu__images--first">
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/steak-1.jpg" alt="">
+                    </div>
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/steak-2.jpg" alt="">
+                    </div>
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/steak-3.jpg" alt="">
+                    </div>
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/steak-4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="menu__items">
+                    <h2 class="menu__heading-2">Steaks</h2>
+                    <div class="menu__item">
+                        <h4 class="menu__heading-4">1. Filet Mignon</h4>
+                        <p class="paragraph">Steak, bean sprouts, tomatoes</p>
+                    </div>
+                    <div class="menu__item">
+                        <h4 class="menu__heading-4">2. Caprese Steak</h4>
+                        <p class="paragraph">Steak, fries, toasted chips</p>
+                    </div>
+                    <div class="menu__item">
+                        <h4 class="menu__heading-4">3. Reverse Sear Steak</h4>
+                        <p class="paragraph">Steak, white rice, bell peppers, onions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__category">
+                <div class="menu__images">
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/burger-1.jpg" alt="">
+                    </div>
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/burger-2.jpg" alt="">
+                    </div>
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/burger-3.jpg" alt="">
+                    </div>
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/burger-4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="menu__items">
+                    <h2 class="menu__heading-2">Burgers</h2>
+                    <div class="menu__item">
+                        <h4 class="menu__heading-4">1. Buffalo Burger</h4>
+                        <p class="paragraph">Crispy chicken, ciabatta rolls, crispy french fries</p>
+                    </div>
+                    <div class="menu__item">
+                        <h4 class="menu__heading-4">2. Steak Tartare</h4>
+                        <p class="paragraph">Steak, kaiser rolls, gouda cheese</p>
+                    </div>
+                    <div class="menu__item">
+                        <h4 class="menu__heading-4">3. Le Pigeon</h4>
+                        <p class="paragraph">Parma ham, sesame seed buns, tomatoes, french fries</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__category">
+                <div class="menu__images menu__images--third">
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/dessert-1.jpg" alt="">
+                    </div>
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/dessert-2.jpg" alt="">
+                    </div>
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/dessert-3.jpg" alt="">
+                    </div>
+                    <div class="menu__aspect-ratio">
+                        <img class="menu__image" src="dist/images/menu/dessert-4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="menu__items">
+                    <h2 class="menu__heading-2">Desserts</h2>
+                    <div class="menu__item">
+                        <h4 class="menu__heading-4">1. Caramel Cheesecake</h4>
+                        <p class="paragraph">Cheesecake, blueberry, caramel</p>
+                    </div>
+                    <div class="menu__item">
+                        <h4 class="menu__heading-4">2. Fudge Sundae</h4>
+                        <p class="paragraph">Vanilla ice cream, coconut wafers, hot fudge</p>
+                    </div>
+                    <div class="menu__item">
+                        <h4 class="menu__heading-4">3. Raspberry Milk</h4>
+                        <p class="paragraph">Silk almond milk, tasmanian alpine raspberries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__text-group">
+                <p class="footer__paragraph">887 W 41
+                    <sup class="footer__sup">ST</sup>, New York, NY 10001
+                </p>
+                <p class="footer__paragraph">(212) 641-3757</p>
+            </div>
+
+            <!-- The "onclick" prevents the page from jumping to the top when the element is clicked. The jumping occurs because there is no link in the "href" -->
+            <a class="footer__link" href="#" onclick="return false;">
+                <img class="footer__image" src="dist/images/icons/instagram.svg" alt="">
+            </a>
+            <a class="footer__link" href="#" onclick="return false;">
+                <img class="footer__image" src="dist/images/icons/twitter.svg" alt="">
+            </a>
+            <a class="footer__link" href="#" onclick="return false;">
+                <img class="footer__image" src="dist/images/icons/youtube.svg" alt="">
+            </a>
+        </div>
+    </footer>
+
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+
+    <!-- Script -->
+    <script src="dist/js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end file -->

@@ -1,0 +1,137 @@
+/* ===================================================
+ Base Styles
+ ================================================== */
+
+.dining
+    &__heading-secondary
+        padding-top: 2.1rem
+
+
+
+/* ===================================================
+ Mobile Styles
+ ================================================== */
+
+@media screen and (max-width: 773px)
+
+    // Margins
+    .dining
+        &__heading-primary,
+        &__image
+            margin-bottom: 1.7rem
+
+        &__location:not(:last-child),
+        &__separator
+            margin-bottom: 3rem
+
+
+
+    // Dining
+    .dining
+        &__heading-secondary,
+        &__heading-primary,
+        &__paragraph
+            text-align: center
+
+        &__asterisk
+            display: none
+
+        &__image
+            width: 100%
+            max-height: 25rem
+            object-fit: cover
+
+        &__paragraph
+            margin-left: auto
+            margin-right: auto
+            max-width: 32rem
+
+
+
+/* ===================================================
+ Desktop Styles
+ ================================================== */
+
+@media screen and (min-width: 773px)
+
+    // Margins
+    .dining
+        &__heading-primary,
+        &__asterisk
+            margin-bottom: 1rem
+
+        &__location:not(:last-child),
+        &__separator
+            margin-bottom: 4.5rem
+
+        &__location
+            grid-column-gap: 4rem
+
+
+
+    // Dining
+    .dining
+        &__location
+            justify-items: center
+            grid-template-columns: 1fr 1fr
+            display: grid
+            text-align: center
+
+        &__location > *
+            max-width: 30rem
+
+        &__location--first,
+        &__location--third
+            grid-template-areas: ". image" "heading-secondary image" "heading-primary image" "asterisk image" "paragraph image" ". image"
+
+        &__location--second
+            grid-template-areas: "image ." "image heading-secondary" "image heading-primary" "image asterisk" "image paragraph" "image ."
+
+        &__heading-secondary
+            grid-area: heading-secondary
+
+        &__heading-primary
+            grid-area: heading-primary
+
+        &__asterisk
+            grid-area: asterisk
+
+        &__image
+            grid-area: image
+            width: 100%
+
+        &__paragraph
+            grid-area: paragraph
+
+
+
+@media screen and (min-width: 1190px)
+
+    // Margins
+    .dining
+        &__location
+            grid-column-gap: 2rem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// end file

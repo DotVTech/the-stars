@@ -1,0 +1,308 @@
+/**
+ *
+ * Documentation
+ *
+ * 1: Only use margin-bottom OR margin-right
+ * 2: Only use rems
+ *
+ */
+
+
+@import "fonts"
+
+
+
+/* =====================================
+ Variables
+ ==================================== */
+
+$font-main             : 'Source Sans Pro', sans-serif // heading-primary
+$font-secondary        : 'Herr Von Muellerhoff', cursive // heading-secondary
+$font-body             : 'Cabin', sans-serif // body
+
+$color-primary         : #252525
+$color-primary-dark    : #121212 // footer
+$color-secondary       : #c59d5f
+$color-tertiary        : #515151
+$color-tertiary-light  : #676767 // li border
+$color-tertiary-dark   : #51515137 // borders
+
+$color-white           : #fff
+$color-black           : #000
+
+
+
+/* =====================================
+ Mixins
+ ==================================== */
+
+@mixin letter-spacing($amount)
+    letter-spacing: $amount
+
+    /**
+     *
+     * Shifts element to original position after letter-spacing is applied
+     *
+     * @if     -letter-spacing  = +margin
+     * @else   letter-spacing   = -margin
+     *
+     */
+    @if $amount < 0
+        margin-right: $amount * -1
+    @else
+        margin-right: -$amount
+
+
+
+@mixin separator($width, $color)
+
+    /**
+     *
+     * Sets width and color of separator
+     *
+     */
+    .separator
+        &__line
+            width: $width
+            background-color: $color
+
+        &__line-left::before
+            border-left-color: $color
+
+        &__line-right::before
+            border-right-color: $color
+
+
+
+/* =====================================
+ Resets
+ ==================================== */
+
+html
+    box-sizing: border-box
+    scroll-behavior: smooth
+
+
+
+*,
+*::before,
+*::after
+    margin: 0
+    box-sizing: inherit
+    padding: 0
+
+
+
+body
+    font-family: $font-body
+    color: $color-tertiary
+
+
+
+// Form elements do not automatically inherit font and color
+input,
+select
+    font: inherit
+    color: inherit
+
+
+
+a
+    text-decoration: none
+
+
+
+/* =====================================
+ Globals
+ ==================================== */
+
+.container
+    margin: 0 auto
+    max-width: 77rem
+    padding: 0 1.5rem
+
+
+
+.section
+    padding: 7rem 0
+
+
+
+.separator
+    justify-content: center
+    align-items: center
+    display: flex
+
+    // Margins -----------------------------
+
+    &__line-left,
+    &__asterisk
+        margin-right: 1rem
+
+    // -------------------------------------
+
+    &__line
+        position: relative
+        height: 0.125rem
+
+    &__line-left::before,
+    &__line-right::before
+        content: ""
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        border: 0.4rem solid transparent
+
+    &__line-left::before
+        left: 0
+
+    &__line-right::before
+        right: 0
+
+    &__asterisk
+        font-size: 0.8rem
+        color: $color-secondary
+
+        &--spin
+            animation-name: spin
+            animation-duration: 0.5s
+            animation-fill-mode: forwards
+
+
+    &--hero
+        @include separator(5.3rem, $color-white)
+
+    &--dining
+        @include separator(100%, $color-tertiary-dark)
+
+
+
+.heading-primary
+    font-size: 2.3rem
+    font-family: $font-main
+    font-weight: 900
+    text-transform: uppercase
+
+    &--default
+        color: $color-white
+        @include letter-spacing(0.32rem)
+
+    &--dining
+        color: $color-primary
+        @include letter-spacing(0.45rem)
+
+
+
+.heading-secondary
+    font-size: 5.3rem
+    font-family: $font-secondary
+    color: $color-secondary
+
+    &::first-letter
+        font-size: 6.4rem
+
+    &--default
+        line-height: 0.4
+        @include letter-spacing(0.13rem)
+
+    &--dining
+        line-height: 0.42
+        @include letter-spacing(-0.06rem)
+
+
+
+.paragraph
+    line-height: 1.6
+
+
+
+.button
+    transition: background-color 0.5s
+    text-transform: uppercase
+    @include letter-spacing(0.13rem)
+
+    &:hover,
+    &:focus
+        background-color: $color-secondary
+
+    &--hero
+        display: inline-block
+        border-radius: 0.25rem
+        padding: 0.55rem  1.1rem
+        background-color: $color-white
+        font-size: 0.7rem
+        color: inherit
+
+        &:hover,
+        &:focus
+            color: $color-white
+
+    &--reservation
+        border: 0
+        border-radius: 0.1rem
+        padding: 0.6rem 1.2rem
+        background-color: $color-primary
+        color: $color-white
+
+
+
+/* =====================================
+ Animations
+ ==================================== */
+
+@keyframes spin
+    0%
+        transform: rotate(0)
+
+    100%
+        transform: rotate(-360deg)
+
+
+
+/* =====================================
+ Section Imports
+ ==================================== */
+
+@import "sections/1-header"
+@import "sections/2-hero"
+@import "sections/3-dining"
+@import "sections/4-banner"
+@import "sections/5-reservation"
+@import "sections/6-menu"
+@import "sections/7-footer"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// end file

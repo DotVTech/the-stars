@@ -1,0 +1,134 @@
+/* ===================================================
+ Base Styles
+ ================================================== */
+
+.menu
+    &__aspect-ratio
+        position: relative
+
+    &__image
+        position: absolute
+
+    &__heading-2
+        border-bottom: 0.06rem solid $color-tertiary-dark
+        padding-bottom: 0.2rem
+        font-size: 1.7rem
+        text-transform: uppercase
+        color: $color-primary
+        @include letter-spacing(0.2rem)
+
+    &__heading-4
+        font-size: 1.2rem
+        text-transform: uppercase
+        color: $color-primary
+        @include letter-spacing(0.12rem)
+
+
+
+/* ===================================================
+ Mobile Styles
+ ================================================== */
+
+@media screen and (max-width: 913px)
+
+    // Margins
+    .menu
+        &__heading-4
+            margin-bottom: 1.2rem
+
+        &__images,
+        &__heading-2
+            margin-bottom: 3rem
+
+        &__item:not(:last-child)
+            margin-bottom: 3.5rem
+
+        &__category:not(:last-child)
+            margin-bottom: 5.5rem
+
+        &__images
+            grid-gap: 0.07rem
+
+
+
+    // Menu
+    .menu
+        &__images
+            grid-template-columns: 1fr 1fr
+            display: grid
+
+        &__aspect-ratio
+            padding-bottom: 75%
+
+        &__image
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+        &__items
+            margin-left: auto
+            margin-right: auto
+            max-width: 30rem
+
+
+
+@media screen and (min-width: 600px) and (max-width: 913px)
+
+    // Margins
+    .menu
+        &__category:not(:last-child)
+            margin-bottom: 8rem
+
+
+
+/* ===================================================
+ Desktop Styles
+ ================================================== */
+
+@media screen and (min-width: 913px)
+
+    // Margins
+    .menu
+        &__heading-4
+            margin-bottom: 1rem
+
+        &__heading-2,
+        &__item:not(:last-child)
+            margin-bottom: 2rem
+
+        &__category:not(:last-child)
+            margin-bottom: 7rem
+
+        &__category
+            grid-column-gap: 4rem
+
+        &__images
+            grid-gap: 0.07rem
+
+
+
+    // Menu
+    .menu
+        &__category
+            align-items: center
+            grid-template-columns: 1fr 1fr
+            display: grid
+            margin-left: auto
+            margin-right: auto
+            max-width: 62rem
+
+        &__images
+            grid-template-columns: 1fr 1fr
+            display: grid
+
+        &__images--first,
+        &__images--third
+            order: 1
+
+        &__aspect-ratio
+            padding-bottom: 100%
+
+        &__image
+            width: 100%
+            height: 100%
+            object-fit: cover

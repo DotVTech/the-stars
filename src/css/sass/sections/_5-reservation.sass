@@ -1,0 +1,151 @@
+/* ===================================================
+ Base Styles
+ ================================================== */
+
+.reservation
+    &__heading-4
+        font-size: 0.95rem
+        text-transform: uppercase
+        color: $color-primary
+
+    &__input,
+    &__select
+        border-color: $color-tertiary-dark
+        border-radius: 0.2rem
+        padding: 0.45rem 0
+        font-size: 0.9rem
+
+    &__input:focus,
+    &__select:focus
+        border-color: $color-secondary
+
+    &__hr
+        color: $color-tertiary-dark
+
+    &__heading-3
+        font-size: 1.3rem
+        text-transform: uppercase
+
+
+
+/* ===================================================
+ Mobile Styles
+ ================================================== */
+
+@media screen and (max-width: 817px)
+
+    // Margins
+    .reservation
+        &__heading-4,
+        &__input,
+        &__select:first-of-type
+            margin-bottom: 0.6rem
+
+        &__select:last-of-type
+            margin-bottom: 1.2rem
+
+        &__heading-3
+            margin-bottom: 1.5rem
+
+        &__text-group:not(:last-child)
+            margin-bottom: 3rem
+
+        &__form,
+        &__hr
+            margin-bottom: 3.4rem
+
+
+
+    // Reservation
+    .reservation
+        &__heading-4,
+        &__form
+            text-align: center
+
+        &__form,
+        &__info
+            margin-left: auto
+            margin-right: auto
+            max-width: 30rem
+
+        &__input,
+        &__select
+            width: 100%
+
+
+
+/* ===================================================
+ Desktop Styles
+ ================================================== */
+
+@media screen and (min-width: 817px)
+
+    // Margins
+    .reservation
+        &__heading-4
+            margin-bottom: 1.2rem
+
+        &__heading-3
+            margin-bottom: 1.5rem
+
+        &__form,
+        &__hr
+            margin-bottom: 3.4rem
+
+        &__form
+            grid-row-gap: 1.6rem
+            grid-column-gap: 1rem
+
+        &__info
+            grid-column-gap: 4rem
+
+
+
+    // Reservation
+    .reservation
+        &__heading-4
+            text-align: center
+
+        &__form
+            grid-template-columns: 1fr 1fr 1fr
+            display: grid
+            margin-left: auto
+            margin-right: auto
+            width: 40rem
+
+        &__button
+            grid-column: 2
+
+        &__info
+            grid-template-columns: 1fr 1fr
+            display: grid
+
+        &__text-group
+            max-width: 33rem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// end file
